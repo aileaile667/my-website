@@ -1,0 +1,133 @@
+.section--alt {
+  background: var(--paper-2);
+}
+
+.research__list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.ritem {
+  display: grid;
+  grid-template-columns: minmax(0, 0.7fr) minmax(0, 2fr) minmax(0, 1fr);
+  gap: clamp(1rem, 3vw, 2.5rem);
+  padding: clamp(1.75rem, 3vw, 2.5rem) 0;
+  border-bottom: 1px solid var(--rule-soft);
+  align-items: start;
+}
+
+.ritem:first-child { border-top: 1px solid var(--rule); }
+
+.ritem__head {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.ritem__tag {
+  display: inline-block;
+  font-size: 0.6875rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 0.25rem 0.6rem;
+  border: 1px solid var(--ink);
+  align-self: flex-start;
+  color: var(--ink);
+  background: var(--paper);
+}
+
+.ritem__date {
+  font-size: 0.6875rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+}
+
+.ritem__title {
+  font-family: var(--font-display);
+  font-size: clamp(1.25rem, 1rem + 0.8vw, 1.6rem);
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  margin-bottom: 0.85rem;
+}
+
+.ritem__abstract {
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--ink-soft);
+  max-width: 56ch;
+}
+
+.ritem__foot {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  align-items: flex-start;
+}
+
+.ritem__status {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.6875rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+}
+
+.ritem__dot {
+  width: 6px; height: 6px;
+  background: var(--accent);
+  border-radius: 50%;
+}
+
+.ritem__bar {
+  width: 100%;
+  max-width: 220px;
+  height: 1.5px;
+  background: var(--rule-soft);
+  position: relative;
+  margin-top: 0.5rem;
+}
+
+.ritem__bar-fill {
+  position: absolute;
+  inset: 0 auto 0 0;
+  background: var(--ink);
+  transition: width 0.8s cubic-bezier(0.2, 0.6, 0.2, 1);
+}
+
+.ritem__bar-label {
+  position: absolute;
+  top: -1.1rem;
+  right: 0;
+  font-size: 0.625rem;
+  letter-spacing: 0.1em;
+  color: var(--ink-muted);
+}
+
+.research__note {
+  margin-top: 2.5rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--rule-soft);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+}
+
+.research__note a {
+  color: var(--accent);
+  border-bottom: 1px solid var(--accent);
+}
+
+@media (max-width: 880px) {
+  .ritem {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .ritem__head { flex-direction: row; align-items: center; }
+}
